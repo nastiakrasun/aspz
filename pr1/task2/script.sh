@@ -33,3 +33,5 @@ for lib in /usr/lib/*.so*; do
     echo "\nПеревірка $lib на наявність sin, cos, exp:"
     nm -D "$lib" 2>/dev/null | grep -E "sin|cos|exp"
 done
+
+# Запуск скрипту: sudo bash script.sh  
