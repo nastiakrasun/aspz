@@ -1,0 +1,13 @@
+1. Команда компіляції з використанням gcc
+gcc -c input.c output.c
+gcc main.c input.o output.o -L/usr/lib -lprocess1 -L~/mylibs -lprocess -o my_program
+
+2. Зміна команди для використання бібліотеки process1 із /usr/lib
+gcc main.c input.o output.o -L/usr/lib -lprocess1 -o my_program
+
+3. Зміна команди для використання бібліотеки process із домашнього каталогу
+gcc main.c input.o output.o -L~/mylibs -lprocess -o my_program
+
+4. Додавання прапорців -g (налагодження) і -O2 (оптимізація)
+gcc -g -O2 -c input.c output.c
+gcc -g -O2 main.c input.o output.o -L/usr/lib -lprocess1 -L~/mylibs -lprocess -o my_program
