@@ -1,0 +1,12 @@
+1. Компіляція:
+gcc -o stack_test stack_test.c -Wall -g
+
+2. Запуск:
+./stack_test
+
+3. Отримання PID процесу:
+ps aux | grep stack_test
+
+4. Перевірка стеку:
+sudo gdb -p <PID>
+bt
