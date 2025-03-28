@@ -1,0 +1,5 @@
+1. Компіляція:
+gcc stack_limit.c -o stack_limit
+
+2. Запуск:
+./stack_limit
