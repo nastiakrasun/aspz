@@ -1,0 +1,14 @@
+1. Запускаємо контейнер із обмеженням у 1000МБ оперативної пам’яті:
+docker run --rm -it --privileged --cap-add=SYS_ADMIN --memory=1000m debian bash
+
+2. Установка perf:
+apt update && apt install -y linux-perf procps
+
+3. Установка stress:
+apt update && apt install -y stress
+
+4. Тест perf:
+perf stat -e cache-misses stress --vm 1 --vm-bytes 50M --timeout 10s
+perf stat -e cache-misses stress --vm 1 --vm-bytes 500M --timeout 10s
+perf stat -e cache-misses stress --vm 1 --vm-bytes 5000M --timeout 10s
+

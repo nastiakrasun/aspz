@@ -1,0 +1,19 @@
+1. Запуск докер контейнера:
+docker run --rm -it --ulimit nofile=1000:1000 ubuntu bash
+
+2. Запуск з root-правами:
+docker run --rm -it --ulimit nofile=65000:65000 ubuntu bash
+
+Команди:
+ulimit -n
+ulimit -aS | grep "open files"
+ulimit -aH | grep "open files"
+ulimit -n 3000
+ulimit -aS | grep "open files"
+ulimit -aH | grep "open files"
+ulimit -n 3001  # Очікуваний результат — помилка, якщо перевищує ліміт
+ulimit -n 2000
+ulimit -n
+ulimit -aS | grep "open files"
+ulimit -aH | grep "open files"
+ulimit -n 3000
