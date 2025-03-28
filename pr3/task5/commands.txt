@@ -1,0 +1,5 @@
+1. Збирання Docker-образу:
+docker build -t file_copy .
+
+2. Запуск контейнера:
+docker run --rm -v "$(pwd):/app" file_copy source.txt destination.txt
