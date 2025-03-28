@@ -1,0 +1,11 @@
+1. Перевірка ліміту:
+ulimit -u
+
+2. Зміна ліміту:
+ulimit -u 100
+
+3. Компіляція програми:
+gcc -o thread_limit thread_limit.c -pthread
+
+4. Запуск:
+./thread_limit
