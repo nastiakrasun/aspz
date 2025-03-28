@@ -2,4 +2,10 @@
 docker build -t file_copy .
 
 2. Запуск контейнера:
-docker run --rm -v "$(pwd):/app" file_copy source.txt destination.txt
+sudo docker run -it --rm -v "$(pwd):/app" file_copy bash
+
+3. Компіляція програми:
+gcc file_copy.c -o file_copy
+
+4. Запуск:
+./file_copy source.txt destination.txt
