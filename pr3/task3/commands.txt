@@ -1,0 +1,5 @@
+1. Збирання Docker-образу:
+docker build -t dice_simulator .
+
+2. Запуск контейнера:
+docker run --rm dice_simulator
