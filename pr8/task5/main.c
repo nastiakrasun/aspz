@@ -1,41 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include <fcntl.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <string.h>
-#include <errno.h>
+#include <unistd.h>
 
 int main() {
-    const char *fifo_name = "/tmp/myfifo";
-    char buffer[] = "Hello, FIFO!";
-
-    // Створюємо FIFO (якщо її ще не існує)
-    if (access(fifo_name, F_OK) == -1) {
-        // FIFO не існує, створюємо
-        if (mkfifo(fifo_name, 0666) == -1) {
-            perror("mkfifo");
-            exit(EXIT_FAILURE);
-        }
-    }
-
     // Відкриваємо FIFO для запису
-    int fd = open(fifo_name, O_WRONLY | O_NONBLOCK); // Неблокуючий режим
+    int fd = open("fifo_file", O_WRONLY);
+
     if (fd == -1) {
-        perror("open");
-        exit(EXIT_FAILURE);
+        perror("Failed to open FIFO for writing");
+        return 1;
     }
 
-    // Спробуємо записати в FIFO
-    ssize_t count = write(fd, buffer, strlen(buffer));
-    if (count == -1) {
-        perror("write");
-    } else {
-        printf("Записано %zd байт до FIFO\n", count);
+    // Пишемо в FIFO
+    const char *message = "Hello, FIFO!";
+    ssize_t bytes_written = write(fd, message, 13); // Пишемо 13 байт
+
+    if (bytes_written == -1) {
+        perror("Failed to write to FIFO");
+        close(fd);
+        return 1;
     }
 
+    printf("Message written to FIFO: %s\n", message);
+
+    // Закриваємо FIFO
     close(fd);
-    unlink(fifo_name); // Видалення FIFO після завершення
+
     return 0;
 }
