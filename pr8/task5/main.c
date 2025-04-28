@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #include <string.h>
 
 int main() {
@@ -10,8 +12,10 @@ int main() {
 
     // Створюємо FIFO (якщо вона ще не існує)
     if (mkfifo(fifo_name, 0666) == -1) {
-        perror("mkfifo");
-        exit(EXIT_FAILURE);
+        if (errno != EEXIST) { // Перевіряємо, чи файл вже існує
+            perror("mkfifo");
+            exit(EXIT_FAILURE);
+        }
     }
 
     // Відкриваємо FIFO для запису
