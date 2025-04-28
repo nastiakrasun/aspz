@@ -28,17 +28,11 @@ int main() {
     }
 
     // Намагатимемось записати великий буфер
-    char big_buffer[65536]; // 64 KB
+    char big_buffer[1024 * 1024]; // 1 MB = 1048576 bytes
     memset(big_buffer, 'A', sizeof(big_buffer));
 
     ssize_t count = write(pipefd[1], big_buffer, sizeof(big_buffer));
-    if (count == -1) {
-        perror("write");
-    } else {
-        printf("Requested to write %lu bytes, actually wrote %zd bytes\n", sizeof(big_buffer), count);
-    }
+    printf("Requested to write %lu bytes, actually wrote %zd bytes\n", sizeof(big_buffer), count);
 
-    close(pipefd[0]);
-    close(pipefd[1]);
     return 0;
 }
