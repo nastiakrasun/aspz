@@ -5,14 +5,16 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <string.h>
+#include <errno.h>
 
 int main() {
     const char *fifo_name = "/tmp/myfifo";
     char buffer[] = "Hello, FIFO!";
 
-    // Створюємо FIFO (якщо вона ще не існує)
-    if (mkfifo(fifo_name, 0666) == -1) {
-        if (errno != EEXIST) { // Перевіряємо, чи файл вже існує
+    // Створюємо FIFO (якщо її ще не існує)
+    if (access(fifo_name, F_OK) == -1) {
+        // FIFO не існує, створюємо
+        if (mkfifo(fifo_name, 0666) == -1) {
             perror("mkfifo");
             exit(EXIT_FAILURE);
         }
@@ -34,6 +36,6 @@ int main() {
     }
 
     close(fd);
-    unlink(fifo_name); // Видалення FIFO
+    unlink(fifo_name); // Видалення FIFO після завершення
     return 0;
 }
