@@ -21,7 +21,7 @@ int main() {
     printf("2. Копіюємо файл до домашньої директорії користувача (від імені root)...\n");
     char command[512];
     snprintf(command, sizeof(command),
-             "sudo cp %s %s && sudo chown your_username:your_username %s",
+             "sudo cp %s %s && sudo chown nastia:nastia %s",
              orig_file, copy_file, copy_file);
     int status = system(command);
     if (status != 0) {
