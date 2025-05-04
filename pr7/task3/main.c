@@ -3,11 +3,6 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-    printf("Number of arguments: %d\n", argc);
-    for (int i = 0; i < argc; i++) {
-        printf("argv[%d] = '%s'\n", i, argv[i]);
-    }
-
     if (argc != 3) {
         fprintf(stderr, "Usage: %s <word> <filename>\n", argv[0]);
         return 1;
