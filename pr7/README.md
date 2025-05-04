@@ -41,7 +41,7 @@
  
 ```bash
 1. gcc -Wall main.c -o main
-2. ./main
+2. ./main <word> <filename>
 ```
 
 **Інше:**  
