@@ -6,7 +6,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -23,7 +23,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -40,7 +40,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -57,7 +57,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -74,7 +74,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -91,7 +91,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -108,7 +108,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -125,7 +125,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -142,7 +142,7 @@
 **Як запустити:** 
  
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
@@ -163,7 +163,7 @@
 **Як запустити:** 
 
 ```bash
-1. gcc -o main main.c
+1. gcc -Wall -o main main.c
 2. ./main
 ```
 
