@@ -58,7 +58,7 @@
  
 ```bash
 1. gcc -Wall main.c -o main
-2. ./main
+2. ./main <filename>
 ```
 
 **Інше:**  
@@ -164,7 +164,7 @@
 
 ```bash
 1. gcc -Wall main.c -o main
-2. ./main
+2. ./main <number>
 ```
 
 **Інше:**  
